@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Interactive Quiz</h1>
+            <div class="category-selector">
+                <label for="category">Select Category:</label>
+                <select id="category" onchange="startQuiz()">
+                    <option value="general">General Knowledge</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                </select>
+            </div>
+            <div class="difficulty-selector">
+                <label for="difficulty">Select Difficulty:</label>
+                <select id="difficulty" onchange="startQuiz()">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 0%"></div>
+            </div>
+            <div class="timer">Time Left: <span id="time">30</span>s</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question-number"></div>
+            <div class="question"></div>
+            <div class="options-container"></div>
+            <div class="feedback"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn restart-btn" onclick="restartQuiz()">Restart</button>
+            <button class="btn next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+
+        <div class="score-container">
+            <h2>Your Score: <span class="score"></span></h2>
+            <h3>Score Breakdown:</h3>
+            <ul class="score-breakdown"></ul>
+            <button class="btn restart-btn" onclick="restartQuiz()">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
